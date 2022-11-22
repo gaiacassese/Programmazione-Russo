@@ -1,5 +1,5 @@
 def sum_csv(file_name):
-    values = []
+    res = 0
     my_file = open(file_name, 'r')
     
     for line in my_file:
@@ -7,15 +7,15 @@ def sum_csv(file_name):
         elements = line.split(',')
         if elements[0] != 'Date':
  
-            date = elements[0]
-            value = elements[1]
+            try: 
+                value=float(elements[1])
+                res=res+value
             
-            values.append(float(value))
+            except:
+                value=None
             
-        somma=sum(values)
+    if res==0:
+        return None
                
-    return somma 
+    return res 
 
-sum_csv('shampoo_sales.csv')
-print (sum_csv('shampoo_sales.csv'))
-    
