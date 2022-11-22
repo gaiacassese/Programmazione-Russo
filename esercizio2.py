@@ -1,6 +1,9 @@
 def sum_csv(file_name):
     res = 0
     my_file = open(file_name, 'r')
+
+    if my_file==[]:
+        return None
     
     for line in my_file:
 
