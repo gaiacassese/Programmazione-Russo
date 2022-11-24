@@ -12,7 +12,7 @@ class CSVFile():
             return None
 
         for line in my_file:
-            elements = line.split(',')
+            elements = line.strip('\n').split(',')
             if elements[0] != 'Date':
                 values.append(elements)
         return values
