@@ -15,7 +15,7 @@ class MovingAverage:
     def mean(self, list):
         sum=0
         for elem in list:
-            sum += int(elem)
+            sum += elem
         return sum/len(list)
         
     
@@ -39,4 +39,8 @@ class MovingAverage:
             
         return res    
 
+moving_average = MovingAverage(2)
 
+result = moving_average.compute([2,4,8,16])
+
+print(result) # Deve stampare a schermo [3.0,6.0,12.0]
