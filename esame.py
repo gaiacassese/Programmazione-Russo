@@ -30,9 +30,11 @@ class MovingAverage:
         #verifico che la lista non sia None
         if mylist is None:
             raise ExamException('Errore, la lista non può essere None')
+        if type(mylist) is not list:
+            raise ExamException('Errore, non è stata data una lista in input')
         #verifico se la lista è vuota
-        # len(mylist)==0:
-            #raise ExamException('Errore, lista valori vuota')
+        len(mylist)==0:
+            raise ExamException('Errore, lista valori vuota')
         #verifico che la lista sia maggiore della finestra
         if (self.finestra>len(mylist)):
             raise ExamException('Errore, la finestra è maggiore della lista')
