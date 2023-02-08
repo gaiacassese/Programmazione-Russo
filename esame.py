@@ -34,8 +34,11 @@ class MovingAverage:
         while i+self.finestra<=len(mylist):
             tmp= mylist[i:i+self.finestra]
             #print(tmp)
-            res.append(self.mean(tmp)) #scrivo self.mean perchè sto richiamando una funzione definita sempre nella stessa classe
-            i += 1
+            try:
+                res.append(self.mean(tmp)) #scrivo self.mean perchè sto richiamando una funzione definita sempre nella stessa classe
+                i += 1
+            except:
+                raise ExamException('Errore, la lista non è composta solo da interi') 
             
         return res    
 
