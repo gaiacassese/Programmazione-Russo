@@ -23,6 +23,7 @@ class MovingAverage:
         for elem in list:
             sum += elem
         return sum/len(list)
+
         
     
     def compute(self, mylist):
