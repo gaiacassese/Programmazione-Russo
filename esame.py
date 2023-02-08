@@ -7,6 +7,9 @@ class MovingAverage:
 
     def __init__(self, finestra):
         self.finestra=finestra
+        #verifico che finestra non sia None
+        if self.finestra is None
+            raise ExamException('Errore, la finestra non può avere lunghezza None')
         #verifico se la finestra è positiva
         if int(self.finestra)<1:
             raise ExamException('Errore, la finestra non può avere lunghezza negativa')
@@ -21,6 +24,9 @@ class MovingAverage:
     
     def compute(self, mylist):
         res=[]
+        #verifico che la lista non sia None
+        if mylist is None:
+            raise ExamException('Errore, la lista non può essere None')
         #verifico se la lista è vuota
         if len(mylist)==0:
             raise ExamException('Errore, lista valori vuota')
