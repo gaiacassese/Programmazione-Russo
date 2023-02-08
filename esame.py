@@ -15,7 +15,7 @@ class MovingAverage:
     def mean(self, list):
         sum=0
         for elem in list:
-            sum+=elem
+            sum += int(elem)
         return sum/len(list)
         
     
