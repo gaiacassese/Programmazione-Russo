@@ -11,7 +11,7 @@ class MovingAverage:
         if self.finestra is None: 
             raise ExamException('Errore, la finestra non può avere lunghezza None')
         #verifico che finestra sia un valore int
-        if self.finestra is not int: 
+        if type(self.finestra) is not int: 
             raise ExamException('Errore, la finestra deve avere un valore intero come lunghezza')
         #verifico se la finestra è positiva
         if int(self.finestra)<1:
