@@ -3,12 +3,13 @@
 class ExamException(Exception):
         pass
 
+
 class MovingAverage:
 
     def __init__(self, finestra):
         self.finestra=finestra
         #verifico che finestra non sia None
-        if self.finestra is None:
+        if self.finestra is None: 
             raise ExamException('Errore, la finestra non può avere lunghezza None')
         #verifico se la finestra è positiva
         if int(self.finestra)<1:
