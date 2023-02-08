@@ -8,7 +8,7 @@ class MovingAverage:
     def __init__(self, finestra):
         self.finestra=finestra
         #verifico se la finestra è positiva
-        if self.finestra<1:
+        if int(self.finestra)<1:
             raise ExamException('Errore, la finestra non può avere lunghezza negativa')
 
     #funzione che mi calcola la media
