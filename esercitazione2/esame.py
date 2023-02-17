@@ -3,6 +3,7 @@
 class ExamException(Exception):
     pass
 
+
 class Diff():
     def __init__(self, ratio=1):
         self.ratio=ratio
@@ -37,6 +38,8 @@ class Diff():
             valueA= mylist[i]
             valueB= mylist[i+1]
             result= valueB-valueA
+
+
             
             print (valueB, '-', valueA, '=', result)
             res.append(result/self.ratio)
