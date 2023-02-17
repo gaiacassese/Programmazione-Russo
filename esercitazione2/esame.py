@@ -6,11 +6,12 @@ class ExamException(Exception):
 class Diff():
     def __init__(self, ratio=1):
         self.ratio=ratio
-        #sratio deve essere positivo
-        if ratio<1:
-            raise ExamException('Errore, ratio deve avere valore positivo')
+        #ratio deve essere prima diverso da None e poi positivo
         if ratio is None:
             raise ExamException('Errore, ratio deve avere un valore diverso da None')
+        if ratio<1:
+            raise ExamException('Errore, ratio deve avere valore positivo')
+        
 
     def compute(self, mylist):
         res=[]
@@ -21,7 +22,7 @@ class Diff():
         if type(mylist) is not list:
             raise ExamException('Errore, non è stata data una lista in input')
         #verifico che la lista abbia almeno due elementi
-        if len(mylist)<1:
+        if len(mylist)<=1:
             raise ExamException('Errore, la lista deve avere almeno due elementi')
         #verifico che la lista sia composta da numeri con la somma: se non posso sommare l'elemento di una lista lancio un'eccezione 
         sum=0
@@ -44,5 +45,5 @@ class Diff():
 
 
 diff=Diff()
-result=diff.compute([2,4,8,16])
+result=diff.compute([2])
 print(result)
