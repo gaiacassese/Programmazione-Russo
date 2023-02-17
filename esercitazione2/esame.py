@@ -7,9 +7,14 @@ class ExamException(Exception):
 class Diff():
     def __init__(self, ratio=1):
         self.ratio=ratio
-        #ratio deve essere prima diverso da None e poi positivo
+        
+        #ratio deve essere diverso da None 
         if ratio is None:
             raise ExamException('Errore, ratio deve avere un valore diverso da None')
+        #ratio deve essere intero    
+        if type(ratio) is not int:
+            raise ExamException('Errore, ratio deve avere un valore intero')
+        #ratio deve essere positivo     
         if ratio<1:
             raise ExamException('Errore, ratio deve avere valore positivo')
         
@@ -39,8 +44,6 @@ class Diff():
             valueB= mylist[i+1]
             result= valueB-valueA
 
-
-            
             print (valueB, '-', valueA, '=', result)
             res.append(result/self.ratio)
         #fine esecuzione
