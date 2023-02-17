@@ -11,9 +11,13 @@ class Diff():
         #ratio deve essere diverso da None 
         if ratio is None:
             raise ExamException('Errore, ratio deve avere un valore diverso da None')
-        #ratio deve essere intero    
-        if type(ratio) is not int:
-            raise ExamException('Errore, ratio deve avere un valore intero')
+        #ratio deve essere un numero
+        sum=0
+        try:
+            sum += self.ratio
+        except:
+            raise ExamException('Errore, la lista non è composta solo da interi') 
+            
         #ratio deve essere positivo     
         if ratio<1:
             raise ExamException('Errore, ratio deve avere valore positivo')
