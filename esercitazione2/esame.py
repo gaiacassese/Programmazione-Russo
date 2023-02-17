@@ -45,5 +45,5 @@ class Diff():
 
 
 diff=Diff()
-result=diff.compute([2])
+result=diff.compute([2,4,8,16])
 print(result)
