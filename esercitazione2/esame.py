@@ -6,9 +6,11 @@ class ExamException(Exception):
 class Diff():
     def __init__(self, ratio=1):
         self.ratio=ratio
-        #se ratio=0 -> errore in quanto non si può dividere per 0
-        if ratio==0:
-            raise ExamException('Errore, non si può dividere per 0')
+        #sratio deve essere positivo
+        if ratio<1:
+            raise ExamException('Errore, ratio deve avere valore positivo')
+        if ratio is None:
+            raise ExamException('Errore, ratio deve avere un valore diverso da None')
 
     def compute(self, mylist):
         res=[]
@@ -18,9 +20,16 @@ class Diff():
         #verifico che l'input sia una lista
         if type(mylist) is not list:
             raise ExamException('Errore, non è stata data una lista in input')
-        #verifico se la lista è vuota
-        if len(mylist)==0:
-            raise ExamException('Errore, lista valori vuota')
+        #verifico che la lista abbia almeno due elementi
+        if len(mylist)<1:
+            raise ExamException('Errore, la lista deve avere almeno due elementi')
+        #verifico che la lista sia composta da numeri con la somma: se non posso sommare l'elemento di una lista lancio un'eccezione 
+        sum=0
+        try:
+            for i in range(len(mylist)):
+                sum += mylist[i]
+        except:
+            raise ExamException('Errore, la lista non è composta solo da interi') 
             
         #inizio esecuzione
         for i in range (len(mylist)-1):
