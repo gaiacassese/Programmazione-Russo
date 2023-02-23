@@ -1,3 +1,5 @@
+#versione 1.2
+
 class ExamException(Exception):
     pass
 
@@ -214,11 +216,3 @@ def detect_similar_monthly_variations(time_series, years):
     return retList
 
     
-
-# ---MAIN CHE POI VA TOLTO
-time_series_file = CSVTimeSeriesFile(name="data.csv")
-time_series = time_series_file.get_data()
-#print(time_series)
-years=[1949,1950]
-
-ritorno=detect_similar_monthly_variations(time_series, years)
