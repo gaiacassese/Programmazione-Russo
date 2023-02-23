@@ -1,4 +1,5 @@
-#versione 1.2
+# versione 1.4
+
 
 class ExamException(Exception):
     pass
